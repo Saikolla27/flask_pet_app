@@ -1,0 +1,16 @@
+venv/ 
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# macOS specific files
+.DS_Store
+
+# Flask instance folder (optional)
+instance/
+
