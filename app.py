@@ -20,5 +20,8 @@ def index():
     pets = Pet.query.all()
     return render_template('view_pets.html', form=form, pets=pets)
 
+
 if __name__ == '__main__':
+    with app.app_context():
+    	db.create_all()
     app.run(debug=True)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Pets</title>
+</head>
+<body>
+    <h1>Add a New Pet</h1>
+
+    <!-- Form for adding a new pet -->
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- CSRF token for security -->
+        
+        <div>
+            {{ form.name.label }}  <!-- Label for name -->
+            {{ form.name(size=32) }}  <!-- Input field for name -->
+        </div>
+        
+        <div>
+            {{ form.age.label }}  <!-- Label for age -->
+            {{ form.age() }}  <!-- Input field for age -->
+        </div>
+        
+        <div>
+            {{ form.type.label }}  <!-- Label for type -->
+            {{ form.type() }}  <!-- Dropdown for pet type -->
+        </div>
+        
+        <div>
+            {{ form.submit() }}  <!-- Submit button -->
+        </div>
+    </form>
+
+    <h2>All Pets:</h2>
+    <ul>
+        {% for pet in pets %}
+            <li>{{ pet.name }} ({{ pet.type }}, {{ pet.age }} years old)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+ 
